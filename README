@@ -1,44 +1,13 @@
-systeme
-=======
+= Systeme - Dimensional declaration and conversion
+=== Now with more drachm!
 
+Systeme provides an extensive but intuitive library of convenience methods for handling and passing around numeric data that represents dimensioned units (such as length, mass, and volume). Besides trimming down your code and making it more readable, it simplifies the task of storing data such that all values are stored in their standard SI base unit (meter, kilogram, etc).
 
-There are two basic ways to use the systeme library
+= Usage
 
-Declarations:
-These allow you to write readable code that produces consistent data. All values end up in their SI base unit.
+=== Declarations
 
-Methods to use include singular and plural long names, and symbols
-ex: gram, grams, kilometer, kilometers, g, m, pound, lb, lbs, stone, inch, mi, yd...
+Declaration methods are the basis for utilizing systeme. Whenever a Numeric is declared with a systeme method, it will return an equivalent value in the SI standard base unit.
 
-1.km (yields 1000.0, as in 1000 meters)
-1000.grams (yields 1.0, the SI base unit for mass is the kilogram)
-12.inches (yield, 0.3048, as in 0.3048 meters)
-
-these declarations can also be used simply to make code more readable, even when value are already in base units 
-ex: length_of_track = 400.meters
-ex: weight_of_a_one_kilogram_rock = 1.kg
-
-
-Conversions:
-The conversion methods will produce results in an explicitly dimension.
-The method names are the same as the declarations, prefixed with 'in_'
-ex: in_inches, in_grams, in_meters, etc...
-
-ex:
-5.kg.in_g = 5000
-10.mm.in_cm = 1
-1000.in_m = 1000 (the undeclared 1000 is assumed to be in the base unit meter, hence no change)
-1000.in_km = 1 (again the undeclared 1000 is assumed to be meters, so it is converted to kilometers)
-
-
-Calculations:
-Lastly, declarations and conversions can make calculations easier to read and write
-
-ex: 12.meters + 541.nanometers
-ex: 120.miles + 14.furlongs + 191.megameters
-ex: (100.meters + 10.km).in_cm
-
-COPYRIGHT
-=========
-
-Copyright (c) 2008 Chris Kalafarski. See LICENSE for details.
+	10.kilometers
+	=> 10000 # as in, 10 kilometers equals 10000 meters
