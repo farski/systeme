@@ -11,7 +11,7 @@ module Systeme
 
       IMPERIAL_MEASURES['length'] = Hash.new
       IMPERIAL_MEASURES['length'][:si] = 0.3048
-      IMPERIAL_MEASURES['length'][:units] = Array.new    
+      IMPERIAL_MEASURES['length'][:units] = Array.new
       IMPERIAL_MEASURES['length'][:units] << { :unit => "thou", :factor => (1.0/12000), :aliases => ["mil"] }
       IMPERIAL_MEASURES['length'][:units] << { :unit => "inch", :factor => (1.0/12), :aliases => ["in", "inches"] }
       IMPERIAL_MEASURES['length'][:units] << { :unit => "foot", :factor => 1, :aliases => ["feet", "ft"] }
@@ -25,7 +25,19 @@ module Systeme
       IMPERIAL_MEASURES['length'][:units] << { :unit => "nautical_mile", :factor => 6080, :aliases => ["NM", "nmi", "M"] }
       IMPERIAL_MEASURES['length'][:units] << { :unit => "link", :factor => (66/100), :aliases => ["lnk"] }
       IMPERIAL_MEASURES['length'][:units] << { :unit => "rod", :factor => (66/4), :aliases => ["perch", "perches", "pole", "lug"] }
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "chain", :factor => 66 }      
+      IMPERIAL_MEASURES['length'][:units] << { :unit => "chain", :factor => 66 }
+      
+      IMPERIAL_MEASURES['weight'] = Hash.new
+      IMPERIAL_MEASURES['weight'][:si] = 0.45359237
+      IMPERIAL_MEASURES['weight'][:units] = Array.new
+      IMPERIAL_MEASURES['weight'][:units] << { :unit => "grain", :factor => (1/7000) }
+      IMPERIAL_MEASURES['weight'][:units] << { :unit => "drachm", :factor => (1/256) }
+      IMPERIAL_MEASURES['weight'][:units] << { :unit => "ounce", :factor => (1/16), :aliases => ["oz"] }
+      IMPERIAL_MEASURES['weight'][:units] << { :unit => "pound", :factor => 1, :aliases => ["lb", "lbm", "lbs"] }
+      IMPERIAL_MEASURES['weight'][:units] << { :unit => "stone", :factor => 14, :aliases => ["st"] }
+      IMPERIAL_MEASURES['weight'][:units] << { :unit => "quarter", :factor => 28 }
+      IMPERIAL_MEASURES['weight'][:units] << { :unit => "hundredweight", :factor => 112, :aliases => ["cwt"] }
+      IMPERIAL_MEASURES['weight'][:units] << { :unit => "ton", :factor => 2240 }
     end # Units
     
     module Declarations
