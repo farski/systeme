@@ -67,7 +67,7 @@ The official distributions of this gem are available on RubyForge under the proj
 
 	$ gem install systeme
 	
-Development can be followed on GitHub at http://www.gihub.com/farski/systeme
+Development can be followed on GitHub at http://www.github.com/farski/systeme
 
 	$ gem install farski-systeme
 
