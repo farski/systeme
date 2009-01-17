@@ -50,6 +50,8 @@ Conversions allow you to display or pass data in a unit other than the SI base. 
 
 The official distributions of this gem are available on RubyForge under the project name systeme
 
+==== this will be available soon
+
 	$ gem install systeme
 	
 Development can be followed on GitHub at http://www.gihub.com/farski/systeme
