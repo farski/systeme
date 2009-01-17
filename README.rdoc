@@ -10,15 +10,15 @@ Systeme provides an extensive but intuitive library of convenience methods for h
 Declaration methods are the basis for utilizing systeme. Whenever a Numeric is declared with a systeme method, it will return an equivalent value in the SI standard base unit. These methods can be taken advantage of in several ways:
 
 	height_of_eiffel_tower = 325.meters
-	# => 325
+	=> 325
 	# 325 already represents the SI standard unit meter, so this just helps you read your code more easily
 
 	10.kilometers
-	# => 10000 # as in, 10 kilometers equals 10000 meters
+	=> 10000 # as in, 10 kilometers equals 10000 meters
 	# This allows you to quickly convert a number to it's equivalent base unit for storage
 	
 	120.miles + 14.furlongs + 191.megameters
-	# => 191195937.632
+	=> 191195937.632 # this value is in meters
 	# Declarations also make otherwise annoying calculations a snap
 	
 Systeme supports the five SI base units (meter, kilogram, ampere, second, kelvin) and all prefixed derivatives (pico-, nano-, kilo-, terra-, giga-, etc). Declarations can be made using any of a number of methods provided by these units.
@@ -37,11 +37,11 @@ A growing number of U.S, Imperial, deprecated, and other non international stand
 Conversions allow you to display or pass data in a unit other than the SI base. The set of methods for conversions is identical to declarations, but with each one prefixed by 'in_'. By declaring the numeric before converting it, any unit can be converted to any other unit. Non-declared numerics will be presumed to already be in their SI base unit
 
 	1000.meters.in_kilometer
-	# => 1
+	=> 1
 	16.oz.in_lb
-	# => 1
+	=> 1
 	5280.in_miles
-	# => 3.28083989501312
+	=> 3.28083989501312
 	# 5280 was presumed to be in meters, if you were looking for a result of 1 you should do 5280.feet.in_miles
 
 = Installation
