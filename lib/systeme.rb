@@ -10,5 +10,3 @@ module Systeme
 end
 
 Numeric.send :include, Systeme
-
-puts 12.meters + 541.nanometers
