@@ -31,6 +31,13 @@ ex:
 1000.in_km = 1 (again the undeclared 1000 is assumed to be meters, so it is converted to kilometers)
 
 
+Calculations:
+Lastly, declarations and conversions can make calculations easier to read and write
+
+ex: 12.meters + 541.nanometers
+ex: 120.miles + 14.furlongs + 191.megameters
+ex: (100.meters + 10.km).in_cm
+
 COPYRIGHT
 =========
 
