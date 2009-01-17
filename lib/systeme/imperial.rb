@@ -7,41 +7,41 @@ module Systeme
     end
 
     module Units
-      IMPERIAL_MEASURES = Hash.new
+      Imperial = Hash.new
 
-      IMPERIAL_MEASURES['length'] = Hash.new
-      IMPERIAL_MEASURES['length'][:si] = 0.3048
-      IMPERIAL_MEASURES['length'][:units] = Array.new
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "thou", :factor => (1.0/12000), :aliases => ["mil"] }
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "inch", :factor => (1.0/12), :aliases => ["in", "inches"] }
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "foot", :factor => 1, :aliases => ["feet", "ft"] }
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "yard", :factor => 3, :aliases => ["yd"] }
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "furlong", :factor => 660 }
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "mile", :factor => 5280, :aliases => ["mi"] }
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "league", :factor => 15840 }
+      Imperial['length'] = Hash.new
+      Imperial['length'][:si] = 0.3048
+      Imperial['length'][:units] = Array.new
+      Imperial['length'][:units] << { :unit => "thou", :factor => (1.0/12000), :aliases => ["mil"] }
+      Imperial['length'][:units] << { :unit => "inch", :factor => (1.0/12), :aliases => ["in", "inches"] }
+      Imperial['length'][:units] << { :unit => "foot", :factor => 1, :aliases => ["feet", "ft"] }
+      Imperial['length'][:units] << { :unit => "yard", :factor => 3, :aliases => ["yd"] }
+      Imperial['length'][:units] << { :unit => "furlong", :factor => 660 }
+      Imperial['length'][:units] << { :unit => "mile", :factor => 5280, :aliases => ["mi"] }
+      Imperial['length'][:units] << { :unit => "league", :factor => 15840 }
       # maritime units
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "fathom", :factor => 6 }
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "cable", :factor => 608 }
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "nautical_mile", :factor => 6080, :aliases => ["NM", "nmi", "M"] }
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "link", :factor => (66.0/100), :aliases => ["lnk"] }
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "rod", :factor => (66.0/4), :aliases => ["perch", "perches", "pole", "lug"] }
-      IMPERIAL_MEASURES['length'][:units] << { :unit => "chain", :factor => 66 }
+      Imperial['length'][:units] << { :unit => "fathom", :factor => 6 }
+      Imperial['length'][:units] << { :unit => "cable", :factor => 608 }
+      Imperial['length'][:units] << { :unit => "nautical_mile", :factor => 6080, :aliases => ["NM", "nmi", "M"] }
+      Imperial['length'][:units] << { :unit => "link", :factor => (66.0/100), :aliases => ["lnk"] }
+      Imperial['length'][:units] << { :unit => "rod", :factor => (66.0/4), :aliases => ["perch", "perches", "pole", "lug"] }
+      Imperial['length'][:units] << { :unit => "chain", :factor => 66 }
       
-      IMPERIAL_MEASURES['weight'] = Hash.new
-      IMPERIAL_MEASURES['weight'][:si] = 0.45359237
-      IMPERIAL_MEASURES['weight'][:units] = Array.new
-      IMPERIAL_MEASURES['weight'][:units] << { :unit => "grain", :factor => (1.0/7000) }
-      IMPERIAL_MEASURES['weight'][:units] << { :unit => "drachm", :factor => (1.0/256) }
-      IMPERIAL_MEASURES['weight'][:units] << { :unit => "ounce", :factor => (1.0/16), :aliases => ["oz"] }
-      IMPERIAL_MEASURES['weight'][:units] << { :unit => "pound", :factor => 1, :aliases => ["lb", "lbm", "lbs"] }
-      IMPERIAL_MEASURES['weight'][:units] << { :unit => "stone", :factor => 14, :aliases => ["st"] }
-      IMPERIAL_MEASURES['weight'][:units] << { :unit => "quarter", :factor => 28 }
-      IMPERIAL_MEASURES['weight'][:units] << { :unit => "hundredweight", :factor => 112, :aliases => ["cwt"] }
-      IMPERIAL_MEASURES['weight'][:units] << { :unit => "ton", :factor => 2240 }
+      Imperial['weight'] = Hash.new
+      Imperial['weight'][:si] = 0.45359237
+      Imperial['weight'][:units] = Array.new
+      Imperial['weight'][:units] << { :unit => "grain", :factor => (1.0/7000) }
+      Imperial['weight'][:units] << { :unit => "drachm", :factor => (1.0/256) }
+      Imperial['weight'][:units] << { :unit => "ounce", :factor => (1.0/16), :aliases => ["oz"] }
+      Imperial['weight'][:units] << { :unit => "pound", :factor => 1, :aliases => ["lb", "lbm", "lbs"] }
+      Imperial['weight'][:units] << { :unit => "stone", :factor => 14, :aliases => ["st"] }
+      Imperial['weight'][:units] << { :unit => "quarter", :factor => 28 }
+      Imperial['weight'][:units] << { :unit => "hundredweight", :factor => 112, :aliases => ["cwt"] }
+      Imperial['weight'][:units] << { :unit => "ton", :factor => 2240 }
     end # Units
     
     module Declarations
-      Systeme::Imperial::Units::IMPERIAL_MEASURES.each do |measure, data|
+      Systeme::Imperial::Units::Imperial.each do |measure, data|
         data[:units].each do |unit|
           define_method(unit[:unit].to_sym) { self * unit[:factor].to_f * data[:si] }
           class_eval("alias :" + unit[:unit] + "s :" + unit[:unit])
