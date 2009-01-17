@@ -55,7 +55,7 @@ One useful application of systeme is to take human readable input to produce usa
 	unit = ((unit_data = input.match(/([a-zA-Z]+)/)) ? unit_data[1] : "m" )
 	
 	si_distance = distance.send(unit)
-	=> 10 058.4
+	=> 10058.4
 
 = Installation
 
