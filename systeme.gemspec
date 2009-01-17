@@ -2,14 +2,14 @@
 
 Gem::Specification.new do |s|
   s.name = %q{systeme}
-  s.version = "0.1.1"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chris Kalafarski"]
-  s.date = %q{2009-01-16}
+  s.date = %q{2009-01-17}
   s.description = %q{TODO}
   s.email = %q{chris@farski.com}
-  s.files = ["VERSION.yml", "lib/systeme", "lib/systeme/metric.rb", "lib/systeme.rb", "test/metric_test.rb", "test/test_helper.rb"]
+  s.files = ["VERSION.yml", "lib/systeme", "lib/systeme/conversions.rb", "lib/systeme/imperial.rb", "lib/systeme/metric.rb", "lib/systeme/registration.rb", "lib/systeme.rb", "test/imperial_test.rb", "test/metric_test.rb", "test/test_helper.rb"]
   s.homepage = %q{http://github.com/farski/systeme}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.1}
