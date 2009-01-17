@@ -13,5 +13,3 @@ module Systeme
 end
 
 Numeric.send :include, Systeme
-
-puts 1.carat
