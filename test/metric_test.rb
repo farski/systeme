@@ -12,12 +12,12 @@ class MetricTest < Test::Unit::TestCase
   end
   
   should "convert value from base unit to any other unit" do
-    assert_equal 1000, 1.kg.to_g
-    assert_equal 100, 1.m.to_cm
+    assert_equal 1000, 1.kg.in_g
+    assert_equal 100, 1.m.in_cm
   end
   
   should "convert value between arbitrary units" do
-    assert_equal 1, 1000.mg.to_g
-    assert_equal 10, 1.cm.to_mm
+    assert_equal 1, 1000.mg.in_g
+    assert_equal 10, 1.cm.in_mm
   end
 end

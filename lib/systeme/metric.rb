@@ -1,9 +1,7 @@
 require 'systeme/registration'
 
 module Systeme
-
   module Metric
-
     def self.included(caller)
       caller.send :include, Systeme::Metric::Declarations
     end    
@@ -47,7 +45,6 @@ module Systeme
         define_method(plural_unit_name.to_sym) { self * (10**(unit_factor_offset)) }
         class_eval("alias :" + unit_data[:symbol].to_s + " :" + plural_unit_name)
         class_eval("alias :" + plural_unit_name.chop + " :" + plural_unit_name)
-
         Systeme::Registration::names << plural_unit_name << unit_data[:symbol].to_s << plural_unit_name.chop
     
         Systeme::Metric::Units::SI_UNIT_PREFIXES.each do |prefix, prefix_data|
@@ -56,13 +53,10 @@ module Systeme
       
           define_method(plural_prefixed_unit_name.to_sym) { self * (10**(prefix_data[:factor] + unit_factor_offset)) }
           class_eval("alias :" + prefixed_symbol + " :" + plural_prefixed_unit_name)
-          class_eval("alias :" + plural_prefixed_unit_name.chop + " :" + plural_prefixed_unit_name)
-          
+          class_eval("alias :" + plural_prefixed_unit_name.chop + " :" + plural_prefixed_unit_name)          
           Systeme::Registration::names << plural_prefixed_unit_name << prefixed_symbol << plural_prefixed_unit_name.chop
         end
       end      
     end # Declarations
-
-  end # Metric
-
+  end
 end

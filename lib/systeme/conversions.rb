@@ -1,17 +1,15 @@
 require 'systeme/registration'
 
 module Systeme
-  module Conversions
-    def method_missing(method_id, *arguments)
-      if match = method_id.to_s.match(/in_([a-zA-Z]+)/)
-        if Systeme::Registration::names.include?(match[1])
-          self / 1.0.send(match[1])
-        else
-          super
+  module Conversions    
+    def method_missing(method_name, *arguments)      
+      if match_data = method_name.to_s.match(/in_([a-zA-Z]+)/)
+        if Systeme::Registration::names.include?(match_data[1])
+          return self / 1.0.send(match_data[1])
         end
-      else
-        super
       end
-    end
-  end # Conversions
+      
+      return super    
+    end   
+  end
 end

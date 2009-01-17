@@ -10,6 +10,3 @@ module Systeme
 end
 
 Numeric.send :include, Systeme
-
-# puts 1.kg.in_grams
-# puts 1000.g

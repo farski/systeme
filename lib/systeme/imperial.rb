@@ -1,9 +1,7 @@
 require 'systeme/registration'
 
 module Systeme
-
   module Imperial
-    
     def self.included(caller)
       caller.send :include, Systeme::Imperial::Declarations
     end
@@ -45,7 +43,5 @@ module Systeme
         end
       end
     end # Declarations
-
-  end # Imperial
-
+  end
 end
