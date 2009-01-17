@@ -44,6 +44,19 @@ Conversions allow you to display or pass data in a unit other than the SI base. 
 	=> 3.28083989501312
 	# 5280 was presumed to be in meters, if you were looking for a result of 1 you should do 5280.feet.in_miles
 
+== Advanced Usage
+
+One useful application of systeme is to take human readable input to produce usable and storable data
+
+	# How far did you walk today?
+	input = "6.25mi"
+	
+	distance = input.to_f
+	unit = ((unit_data = input.match(/([a-zA-Z]+)/)) ? unit_data[1] : "m" )
+	
+	si_distance = distance.send(unit)
+	=> 10 058.4
+
 = Installation
 
 === As a gem
