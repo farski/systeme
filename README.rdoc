@@ -57,6 +57,10 @@ One useful application of systeme is to take human readable input to produce usa
 	si_distance = distance.send(unit)
 	=> 10058.4
 
+== Parsing
+
+The parse method provides very lax natural language parsing of dimensioned numbers in strings. It works much as one would expect, but two things to note: it will simply ignore any numbers associated with labels it doesn't understand, and it doesn't care if all the numbers in the string are of the same dimensionality. A string like "1 meter 1 centimeter" 1.01 and the string "1 meter 1 kilogram" will return 2.0. The same unit label can appear many times in a single string ("1m 1m 1m" => 3.0). If the parser finds a number with no label, it is technically being dimensioned as 'meter', which has no effect on the value.
+
 = Installation
 
 === As a gem
