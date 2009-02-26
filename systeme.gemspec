@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{systeme}
-  s.version = "0.4.0"
+  s.version = "0.4.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chris Kalafarski"]
-  s.date = %q{2009-02-25}
+  s.date = %q{2009-02-26}
   s.description = %q{TODO}
   s.email = %q{chris@farski.com}
   s.files = ["README.rdoc", "VERSION.yml", "lib/systeme", "lib/systeme/conversions.rb", "lib/systeme/imperial.rb", "lib/systeme/international.rb", "lib/systeme/length.rb", "lib/systeme/localize.rb", "lib/systeme/metric.rb", "lib/systeme/registration.rb", "lib/systeme.rb", "test/imperial_test.rb", "test/international_test.rb", "test/metric_test.rb", "test/parse_test.rb", "test/test_helper.rb"]
