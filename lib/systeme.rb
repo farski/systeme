@@ -30,5 +30,3 @@ module Systeme
 end
 
 Numeric.send :include, Systeme
-
-puts Systeme.parse('1m')

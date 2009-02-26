@@ -1,6 +1,10 @@
 require File.dirname(__FILE__) + '/test_helper'
 
 class ParseTest < Test::Unit::TestCase
+  should "return nil if there are not digit in the string" do
+    assert_nil Systeme.parse('')
+  end
+
   should "parse a single base unit string" do
     assert_equal 1, Systeme.parse('1m')
     assert_equal 1, Systeme.parse('1 meter')
